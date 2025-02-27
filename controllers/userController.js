@@ -23,7 +23,7 @@ async function register(req, res) {
             password: hashedPassword
         });
 
-        res.status(201).json({ message: 'Creation successful', username: user.name,  });
+        res.status(201).json({ message: 'Creation successful', username: user.name });
 
     } catch (err) {
         console.error(err);
