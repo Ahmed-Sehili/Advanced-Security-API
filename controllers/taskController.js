@@ -3,8 +3,6 @@ import Task from '../models/taskModel.js';
 async function getTasks(req, res) {
     const { id } = req.user;
 
-    console.log(req.user);
-
     try {
         const tasks = await Task.findAll({ where: { user_id: id } });
 
