@@ -21,8 +21,8 @@ A Highly Secure Task Manager API built using **Node.js, Express, Sequelize, and 
 
 ### 1. Clone the Repository
 ```sh
-git clone https://github.com/Ahmed-Sehili/Advanced-Security-API.git
-cd Advanced-Security-API
+git clone https://github.com/Ahmed-Sehili/Security-Focused-API.git
+cd Security-Focused-API
 ```
 
 ### 2. Install Dependencies
