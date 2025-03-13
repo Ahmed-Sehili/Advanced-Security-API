@@ -4,7 +4,7 @@ async function getTasks(req, res) {
   const { id } = req.user;
 
   try {
-    const tasks = await Task.findAll({ where: { user_id: id } });
+    const tasks = await Task.findAll({ where: { user_id: String(id) } });
 
     res.status(200).json(tasks);
   } catch (err) {
@@ -17,15 +17,13 @@ async function createTask(req, res) {
   const { id } = req.user;
   const { content, completed } = req.body;
 
-  console.log(id);
-
   try {
     if (content === "" || !content) {
       return res.status(400).json({ message: "Task cannot be empty" });
     }
 
     const newTask = await Task.create({
-      user_id: id,
+      user_id: String(id),
       content: content,
       completed: completed,
     });
@@ -45,7 +43,7 @@ async function updateTask(req, res) {
   try {
     const { id } = req.params;
     const user = req.user;
-    const task = await Task.findOne({ where: { user_id: user.id, id: id } });
+    const task = await Task.findOne({ where: { user_id: String(user.id), id: id } });
 
     if (!task) {
       return res.status(404).json({ message: "Task not found" });
