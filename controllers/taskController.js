@@ -67,7 +67,7 @@ async function deleteTask(req, res) {
     const user = req.user;
 
     const task = await Task.findOne({
-      where: { user_id: user.id, id: id },
+      where: { user_id: String(user.id), id: id },
     });
 
     if (!task) {
