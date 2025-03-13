@@ -13,7 +13,7 @@ A Highly Secure Task Manager API built using **Node.js, Express, Sequelize, and 
 
 ## Tech Stack
 - **Backend:** Node.js, Express.js
-- **Database:** PostgreSQL (via Sequelize ORM)
+- **Database:** SQLite3 (via Sequelize ORM)
 - **Authentication:** JWT (JSON Web Tokens)
 - **Middleware:** Express-validator, express-rate-limit, bcrypt
 
